@@ -15,14 +15,15 @@ def main():
     while 1:
       msg = messaging.recv_sock(device_state_sock, wait=True)
       if msg is not None:
-        if msg.deviceState.started.usbOnline:
+        if not msg.deviceState.started.usbOnline:
            shutdown_count = 0
         else:
            shutdown_count += 5
-           print('current', shutdown_count, 'shutdown_at', shutdown_at)
+        
+        print('current', shutdown_count, 'shutdown_at', shutdown_at)
 
         if shutdown_count >= shutdown_at > 0:
-           os.system('LD_LIBRARY_PATH="" svc power shutdown')
+          os.system('LD_LIBRARY_PATH="" svc power shutdown')
 
     time.sleep(5)
 
