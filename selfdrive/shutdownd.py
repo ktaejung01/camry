@@ -15,7 +15,7 @@ def main():
     while 1:
       msg = messaging.recv_sock(device_state_sock, wait=True)
       if msg is not None:
-        if not msg.deviceState.started.usbOnline:
+        if msg.deviceState.usbOnline:
            shutdown_count = 0
         else:
            shutdown_count += 5
