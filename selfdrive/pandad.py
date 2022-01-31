@@ -103,8 +103,8 @@ def main() -> None:
           Params().put_bool("PandaHeartbeatLost", True)
           cloudlog.event("heartbeat lost", deviceState=health, serial=panda.get_usb_serial())
 
-        cloudlog.info(f"Resetting panda {panda.get_usb_serial()}")
-        panda.reset()
+        #cloudlog.info(f"Resetting panda {panda.get_usb_serial()}")
+       # panda.reset()
 
       # sort pandas to have deterministic order
       pandas.sort(key=cmp_to_key(panda_sort_cmp))
