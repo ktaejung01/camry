@@ -18,7 +18,7 @@ def get_startup_event(car_recognized, controller_available, fw_seen):
  #   event = EventName.startup
  # else:
 #    event = EventName.startupMaster
-event = EventName.startup
+     event = EventName.startup
 
   if not car_recognized:
     if fw_seen:
