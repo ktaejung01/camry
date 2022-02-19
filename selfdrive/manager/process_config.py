@@ -40,7 +40,7 @@ procs = [
 
   # EON only
   PythonProcess("rtshield", "selfdrive.rtshield", enabled=EON),
-  PythonProcess("shutdownd", "selfdrive.hardware.eon.shutdownd", enabled=EON),
+  PythonProcess("shutdownd", "selfdrive.shutdownd", enabled=EON, persistent=True),
   PythonProcess("androidd", "selfdrive.hardware.eon.androidd", enabled=EON, persistent=True),
 ]
 
